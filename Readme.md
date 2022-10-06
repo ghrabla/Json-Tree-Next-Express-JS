@@ -1,3 +1,15 @@
-Json Map:
-What is it?
-Json Map is a tool for mapping json to objects. It is written in Nextjs for frontend and ExpressJs for backend. It is a work in progress and is not yet ready for production use.
+# React File Upload
+
+> This is a full stack React-Express file uploader but could easily be modified to work with any back-end including cloud storage
+
+## Quick Start
+
+```bash
+# Install dependencies server/client
+npm install
+cd client
+npm install
+
+# Serve on localhost:3000
+npm run dev
+```
