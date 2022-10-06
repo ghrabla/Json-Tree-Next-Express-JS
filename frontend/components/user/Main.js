@@ -89,7 +89,7 @@ let mydata;
              let arrofindex = [];
              const list = document.getElementById("list"); // get the list element
              list.innerHTML = ""; // clear the list
-             list.appendChild(createTree(data));
+             list.appendChild(createDom(data));
           //  const objProps = (obj,origProp) => {
           //   for(let val in obj){
           //     if(typeof obj[val] === 'object'){
@@ -171,18 +171,18 @@ let mydata;
     
   };
   
-  const createTree = (data) => {
+  const createDom = (data) => {
     const ul = document.createElement("ul");
     for (const key in data) {
       const li = document.createElement("li");
       li.innerHTML = key;
       if (typeof data[key] === "object") {
-        li.appendChild(createTree(data[key]));
+        li.appendChild(createDom(data[key]));
       } else {
         li.innerHTML += `: ${data[key]}`; // append value to key if not an object (leaf node)
       }
       ul.appendChild(li);
-      li.style.color = typeof data[key] === "string" ? "red" : "white"; // change color if leaf node (string) or not (object)
+      li.style.color = typeof data[key] === "string" ? "white" : "white"; // change color if leaf node (string) or not (object)
       li.style.fontWeight =
         typeof data[key] === "string" ? "extrabold" : "bold";
       li.style.listStyleType =
